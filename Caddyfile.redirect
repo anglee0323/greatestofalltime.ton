@@ -1,0 +1,3 @@
+:80 {
+    redir https://anglee0323.github.io/greatestofalltime.ton{uri}
+}

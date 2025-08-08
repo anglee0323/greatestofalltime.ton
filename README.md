@@ -2,6 +2,21 @@
 
 一个极简个人网站，展示"我是最强的区块链天才！！！！！"
 
+## 🚀 推荐：部署到TON Storage（完全去中心化，免费）
+
+### 使用TON Byte部署
+1. 访问 [tonbyte.com](https://tonbyte.com)
+2. 创建账户并上传项目文件（主要是index.html和favicon.ico）
+3. 获得Bag ID
+4. 在TON DNS中将Bag ID填入"TON Storage"字段
+5. 您的网站将通过TON网络完全去中心化运行！
+
+### 手动TON Storage部署
+1. 创建包含index.html的文件夹
+2. 使用TON Storage工具创建bag
+3. 上传到TON网络获得Bag ID
+4. 在dns.ton.org中设置Bag ID
+
 ## 部署到GitHub Pages
 
 ### 步骤1: 创建GitHub仓库
