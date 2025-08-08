@@ -4,21 +4,30 @@
 
 ## 🚀 推荐：部署到TON Storage（完全去中心化，免费）
 
-### 方式1: 使用TON Storage CLI（推荐）
-1. 下载TON Storage工具：
-   ```bash
-   # 下载storage-daemon
-   wget https://github.com/ton-blockchain/ton/releases/latest/download/storage-daemon-linux-x86_64
-   chmod +x storage-daemon-linux-x86_64
-   ```
-2. 启动daemon并创建bag：
-   ```bash
-   ./storage-daemon-linux-x86_64 -C storage-db
-   # 在另一个终端
-   storage-daemon-cli -I 127.0.0.1:5555 -k storage-db/cli-keys/client -p storage-db/cli-keys/server.pub
-   create ton-storage-deploy/
-   ```
-3. 获得Bag ID，在TON DNS中填入"TON Storage"字段
+### 方式1: 使用推荐提供商部署（最便宜！）
+
+**选定提供商**: 德国服务器 - 仅需 **0.50 TON**！
+- 100%稳定，99.98%运行时间
+- 通过 [mytonprovider.org](https://mytonprovider.org) 选定
+
+**详细部署步骤**: 查看 [`TON-STORAGE-DEPLOY.md`](./TON-STORAGE-DEPLOY.md)
+
+**快速部署**:
+```bash
+# 1. 下载工具
+wget https://github.com/ton-blockchain/ton/releases/latest/download/storage-daemon-linux-x86_64
+chmod +x storage-daemon-linux-x86_64
+
+# 2. 启动daemon
+./storage-daemon-linux-x86_64 -C storage-db -I 127.0.0.1:5555
+
+# 3. 创建bag
+storage-daemon-cli -I 127.0.0.1:5555 -k storage-db/cli-keys/client -p storage-db/cli-keys/server.pub
+> create ton-storage-deploy/
+
+# 4. 支付0.50 TON给提供商，获得Bag ID
+# 5. 在dns.ton.org的"TON Storage"字段填入Bag ID
+```
 
 ### 方式2: 使用TON Byte部署（如果可用）
 1. 访问 [tonbyte.com](https://tonbyte.com)（注意：可能服务不稳定）
