@@ -4,18 +4,36 @@
 
 ## 🚀 推荐：部署到TON Storage（完全去中心化，免费）
 
-### 使用TON Byte部署
-1. 访问 [tonbyte.com](https://tonbyte.com)
-2. 创建账户并上传项目文件（主要是index.html和favicon.ico）
-3. 获得Bag ID
-4. 在TON DNS中将Bag ID填入"TON Storage"字段
-5. 您的网站将通过TON网络完全去中心化运行！
+### 方式1: 使用TON Storage CLI（推荐）
+1. 下载TON Storage工具：
+   ```bash
+   # 下载storage-daemon
+   wget https://github.com/ton-blockchain/ton/releases/latest/download/storage-daemon-linux-x86_64
+   chmod +x storage-daemon-linux-x86_64
+   ```
+2. 启动daemon并创建bag：
+   ```bash
+   ./storage-daemon-linux-x86_64 -C storage-db
+   # 在另一个终端
+   storage-daemon-cli -I 127.0.0.1:5555 -k storage-db/cli-keys/client -p storage-db/cli-keys/server.pub
+   create ton-storage-deploy/
+   ```
+3. 获得Bag ID，在TON DNS中填入"TON Storage"字段
 
-### 手动TON Storage部署
-1. 创建包含index.html的文件夹
-2. 使用TON Storage工具创建bag
-3. 上传到TON网络获得Bag ID
-4. 在dns.ton.org中设置Bag ID
+### 方式2: 使用TON Byte部署（如果可用）
+1. 访问 [tonbyte.com](https://tonbyte.com)（注意：可能服务不稳定）
+2. 创建账户并上传 `ton-storage-deploy` 文件夹  
+3. 获得Bag ID
+
+### 方式3: 等待其他TON Storage服务
+TON生态中可能还会出现其他易用的TON Storage服务。
+
+## 🌐 临时方案：使用GitHub Pages + TON DNS重定向
+
+如果TON Storage暂时难以部署，您可以先：
+1. 使用GitHub Pages（已就绪）: https://anglee0323.github.io/greatestofalltime.ton/
+2. 在TON DNS中尝试将域名设置为钱包地址
+3. 或寻找支持重定向到外部URL的TON代理服务
 
 ## 部署到GitHub Pages
 
